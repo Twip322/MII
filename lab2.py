@@ -51,7 +51,3 @@ def clustering(x):
     print()
 while True:
     clustering(int(input('Введите вес:')))
-##TODO
-##Таблица
-##Графики
-##Операции
