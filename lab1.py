@@ -6,7 +6,7 @@ a =[0,50]
 b =[50,110]
 c =[80,150]
 d =[200,250]
-numbers = [i * 1 for i in range(251)]
+numbers = [i * 5 for i in range(51)]
 imp1=[]
 imp2=[]
 imp3=[]
@@ -28,13 +28,12 @@ def trap(a,b,c,d):
 func1=trap(a[0],b[0],c[0],d[0])
 func2=trap(a[1],b[1],c[1],d[1])
 
-
 for num in numbers:
     output(num,func1(num),func2(num))
     imp1.append(func1(num))
     imp2.append(func2(num))
-plt.plot((a[0],b[0],c[0],d[0])(0,1,0))
-plt.plot((a[1],b[1],c[1],d[1])(0,1,0))
+plt.plot((a[0],b[0],c[0],d[0]),(0,1,1,0))
+plt.plot((a[1],b[1],c[1],d[1]),(0,1,1,0))
 
 for num in numbers:
     print("Пересечение: {0}".format(min(func1(num),func2(num))))
