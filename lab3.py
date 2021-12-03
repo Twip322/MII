@@ -108,7 +108,7 @@ def clicked():
     b = int(fn_1_2.get())
     c = int(fn_1_3.get())
     d = int(fn_1_4.get())
-    x = np.arange(d + 10)
+    x = np.arange(d)
     if d == 0:
         trap = False
     else:
@@ -130,7 +130,6 @@ def show():
             if i == lbox.index(lbox.curselection()[z]):
                 plt.plot(list_functions[i])
                 z += 1
-    union()
     plt.show()
 
 
@@ -139,7 +138,7 @@ def change():
     b = int(fn_1_2.get())
     c = int(fn_1_3.get())
     d = int(fn_1_4.get())
-    x = np.arange(d + 10)
+    x = np.arange(d)
 
     if (d == 0):
         trap = False
@@ -152,19 +151,25 @@ def change():
 
 def clone():
     nums = list_numbers[lbox.index(lbox.curselection()[0])]
-    imp1=[]
-    x=np.arange(600)
-    for l in x:
-        imp1.append(
-            max(list_functions[lbox.index(lbox.curselection()[0])], list_functions[lbox.index(lbox.curselection()[1])],
-                list_functions[lbox.index(lbox.curselection()[2])]))
+
     list_functions.append(cloned_func(nums[0]+100, nums[1], nums[2], nums[3], nums[4], nums[5],True))
     list_numbers.append(nums)
     list_functions.append(cloned_func(nums[0] - 100, nums[1], nums[2], nums[3], nums[4], nums[5],False))
 
     listbox_update()
-
-
+    imp1 = []
+    x = np.arange(nums[4])
+    l1=list_functions[0]
+    l2=list_functions[1]
+    l3=list_functions[2]
+    for l in x:
+        imp1.append(
+            max(l1[l],l2[l],l3[l]))
+    plt.plot(x,list_functions[0])
+    plt.plot(x,list_functions[1])
+    plt.plot(x, list_functions[2])
+    plt.plot(x,imp1,color='gray')
+    plt.show()
 
 
 def del_function():
