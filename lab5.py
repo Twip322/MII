@@ -382,10 +382,10 @@ btn_graph_tend = Button(window, text="График тенденций!", command
 btn_graph_tend.grid(column=3, row=11)
 
 btn_pred = Button(window, text="Прогноз!", command=predict)
-btn_pred.grid(column=7, row=7)
+btn_pred.grid(column=2, row=12)
 
 btn_graph_ChVK = Button(window, text="График предсказания", command=graph_ChVK)
-btn_graph_ChVK.grid(column=7, row=11)
+btn_graph_ChVK.grid(column=3, row=12)
 
 hardcode()
 
